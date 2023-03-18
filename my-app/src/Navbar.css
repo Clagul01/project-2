@@ -1,27 +1,30 @@
 .navbar {
+  background-color: #F7B42C;
+  height: 80px;
   width: 100%;
-  height: 50px;
-  background-color: black;
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
-.navbar ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.logo {
+  width: 120px;
+  margin-left: 40px;
 }
 
-.navbar li a {
-  color: white;
+.nav-links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+.nav-link {
   text-decoration: none;
-  padding: 10px;
-}
-
-.navbar li a:hover {
-  background-color: white;
   color: black;
+  font-size: 20px;
+  transition: all .3s ease-in-out;
 }
 
+.nav-link:hover {
+  color: white;
+}
 

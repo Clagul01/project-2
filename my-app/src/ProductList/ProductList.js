@@ -1,30 +1,30 @@
 import React, { useState } from "react";
+import "./ProductList.css";
+
+// import more images as needed
 
 const productListData = [
   {
     name: "Product 1",
     price: 9.99,
+    imgSrc: "path/to/image1.jpg" // add image source here
   },
   {
     name: "Product 2",
     price: 12.99,
+    imgSrc: "path/to/image2.jpg" // add image source here
   },
   {
-    name: "Product 3",
-    price: 15.99,
+    name: "Product 1",
+    price: 9.99,
+    imgSrc: "path/to/image1.jpg" // add image source here
   },
   {
-    name: "Product 4",
-    price: 18.99,
+    name: "Product 2",
+    price: 12.99,
+    imgSrc: "path/to/image2.jpg" // add image source here
   },
-  {
-    name: "Product 5",
-    price: 21.99,
-  },
-  {
-    name: "Product 6",
-    price: 24.99,
-  },
+  // add more products with their respective image source here
 ];
 
 function ProductList() {
@@ -39,8 +39,9 @@ function ProductList() {
       <ul>
         {productListData.map((product, index) => (
           <li key={index}>
-            <p>{product.name}</p>
-            <p>${product.price.toFixed(2)}</p>
+            <p className="productName">{product.name}</p>
+            <img src={product.imgSrc} alt={product.name} /> {/* add image here */}
+            <p className="productPrice">${product.price.toFixed(2)}</p>
             <button onClick={() => handleAddToBasket(product)}>Add to basket</button>
           </li>
         ))}
@@ -60,3 +61,4 @@ function ProductList() {
 }
 
 export default ProductList;
+

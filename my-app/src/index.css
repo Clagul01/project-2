@@ -1,0 +1,16 @@
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margin and padding from every element */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
