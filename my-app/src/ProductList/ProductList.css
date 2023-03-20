@@ -46,8 +46,12 @@
 }
 
 .basket {
-  width: 25%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
 }
+
 
 .basket h2 {
   color: #F7B42C;
@@ -55,7 +59,7 @@
 }
 
 .basket p {
-  text-align: center;
+  text-align:left;
 }
 
 .right-section {
