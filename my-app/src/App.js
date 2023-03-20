@@ -1,21 +1,26 @@
 import React from 'react';
 import Navbar from './Navbar';
 import ProductList from './ProductList/ProductList';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
-    <div>
+    <>
       {/* Rendering Navbar */}
       <Navbar />
       
       {/* Adding heading to the page */}
-      <h1>E-commerce Webpage</h1>
+      <h1>Caffeine Craze</h1>
 
       {/* Rendering ProductList */}
       <ProductList />
-    </div>
+      
+      {/* Rendering Footer */}
+      <Footer />
+    </>
   );
 }
 
 export default App;
+
 

@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import "./ProductList.css";
 
-// import more images as needed
-
 const productListData = [
   {
-    name: "Product 1",
-    price: 9.99,
-    imgSrc: "path/to/image1.jpg" // add image source here
+    name: "espresso",
+    price: 2.99,
+    imgSrc: "path/to/image1.jpg"
   },
   {
-    name: "Product 2",
-    price: 12.99,
-    imgSrc: "path/to/image2.jpg" // add image source here
+    name: "machiatto",
+    price: 2.99,
+    imgSrc: "path/to/image2.jpg"
   },
   {
-    name: "Product 1",
-    price: 9.99,
-    imgSrc: "path/to/image1.jpg" // add image source here
+    name: "latte",
+    price: 1.99,
+    imgSrc: "path/to/image3.jpg"
   },
   {
-    name: "Product 2",
-    price: 12.99,
-    imgSrc: "path/to/image2.jpg" // add image source here
+    name: "cappucino",
+    price: 2.99,
+    imgSrc: "path/to/image4.jpg"
   },
-  // add more products with their respective image source here
+  
+  
 ];
+
 
 function ProductList() {
   const [basket, setBasket] = useState([]);
@@ -34,31 +34,47 @@ function ProductList() {
     setBasket((prev) => [...prev, product]);
   }
 
+  const calculateTotal = () => {
+    return basket.reduce((total, product) => total + product.price, 0).toFixed(2);
+  };
+
   return (
-    <div>
-      <ul>
+    <div className="product-list-container">
+      <div className="product-list">
         {productListData.map((product, index) => (
-          <li key={index}>
-            <p className="productName">{product.name}</p>
-            <img src={product.imgSrc} alt={product.name} /> {/* add image here */}
-            <p className="productPrice">${product.price.toFixed(2)}</p>
-            <button onClick={() => handleAddToBasket(product)}>Add to basket</button>
-          </li>
+          <div className="product-card" key={index}>
+            <img src={product.imgSrc} alt={product.name} />
+            <div className="product-details">
+              <p className="product-name">{product.name}</p>
+              <p className="product-price">£{product.price.toFixed(2)}</p>
+              <button className="add-to-basket" onClick={() => handleAddToBasket(product)}>Add to basket</button>
+            </div>
+          </div>
         ))}
-      </ul>
-      <h2>Basket:</h2>
-      <ul>
-        {basket.map((product, index) => (
-          <li key={index}>
-            <p>{product.name}</p>
-            <p>${product.price.toFixed(2)}</p>
-          </li>
-        ))}
-        {basket.length === 0 && <p>Your basket is empty.</p>}
-      </ul>
+      </div>
+      <div className="basket-container">
+        <h2>Basket:</h2>
+        <ul className="basket">
+          {basket.map((product, index) => (
+            <li key={index}>
+              <p>{product.name}</p>
+              <p>£{product.price.toFixed(2)}</p>
+            </li>
+          ))}
+          {basket.length === 0 && <p>Your basket is empty.</p>}
+          {basket.length > 0 && (
+            <>
+              <li>
+                <p>Total:</p>
+                <p>${calculateTotal()}</p>
+              </li>
+              <button>Checkout</button>
+            </>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
 
 export default ProductList;
-

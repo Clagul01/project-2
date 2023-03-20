@@ -14,3 +14,30 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
+
+h1 {
+  color: #F7B42C;
+  text-align: left;
+  font-size: 100px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 3px 4px #3E2723;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 180px;
+
+  animation: zoomInOut 2s ease-in-out;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
