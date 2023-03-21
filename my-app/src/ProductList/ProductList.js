@@ -1,30 +1,33 @@
 import React, { useState } from "react";
+import espressoImg from './images/espresso.jpg';
+import machiattoImg from './images/machiatto.jpg';
+import latteImg from './images/latte.jpg';
+import cappucinoImg from './images/cappucino.jpg';
 import "./ProductList.css";
 
 const productListData = [
   {
     name: "espresso",
     price: 2.99,
-    imgSrc: "path/to/image1.jpg"
+    image: espressoImg
   },
   {
     name: "machiatto",
     price: 2.99,
-    imgSrc: "path/to/image2.jpg"
+    image: machiattoImg
   },
   {
     name: "latte",
     price: 1.99,
-    imgSrc: "path/to/image3.jpg"
+    image: latteImg
   },
   {
     name: "cappucino",
     price: 2.99,
-    imgSrc: "path/to/image4.jpg"
+    image: cappucinoImg
   },
-  
-  
 ];
+
 
 
 function ProductList() {
@@ -43,13 +46,14 @@ function ProductList() {
       <div className="product-list">
         {productListData.map((product, index) => (
           <div className="product-card" key={index}>
-            <img src={product.imgSrc} alt={product.name} />
-            <div className="product-details">
-              <p className="product-name">{product.name}</p>
-              <p className="product-price">£{product.price.toFixed(2)}</p>
-              <button className="add-to-basket" onClick={() => handleAddToBasket(product)}>Add to basket</button>
-            </div>
+          <img src={product.image} alt={product.name} />
+          <div className="product-details">
+            <p className="product-name">{product.name}</p>
+            <p className="product-price">£{product.price.toFixed(2)}</p>
+            <button className="add-to-basket" onClick={() => handleAddToBasket(product)}>Add to basket</button>
           </div>
+        </div>
+        
         ))}
       </div>
       <div className="basket-container">
@@ -66,7 +70,7 @@ function ProductList() {
             <>
               <li>
                 <p>Total:</p>
-                <p>${calculateTotal()}</p>
+                <p>£{calculateTotal()}</p>
               </li>
               <button>Checkout</button>
             </>
