@@ -4,7 +4,7 @@ import logo from "./Images/logo.png";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer id="footer">
       <div className="footer-container">
         <div className="footer-logo">
           <img src={logo} alt="logo" />
@@ -24,6 +24,8 @@ function Footer() {
               <a href="/contact">Contact</a>
             </li>
           </ul>
+          <p>Copyright © 2022</p>
+
         </div>
       </div>
     </footer>

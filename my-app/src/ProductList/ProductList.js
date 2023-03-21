@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import espressoImg from './images/espresso.jpg';
 import machiattoImg from './images/machiatto.jpg';
 import latteImg from './images/latte.jpg';
@@ -32,6 +32,15 @@ const productListData = [
 
 function ProductList() {
   const [basket, setBasket] = useState([]);
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    // Calculate the height of the footer
+    const footerHeight = document.getElementById("footer").offsetHeight;
+
+    // Set the container height to be the window height minus the footer height
+    setContainerHeight(window.innerHeight - footerHeight);
+  }, []);
 
   function handleAddToBasket(product) {
     setBasket((prev) => [...prev, product]);
@@ -42,19 +51,25 @@ function ProductList() {
   };
 
   return (
-    <div className="product-list-container">
-      <div className="product-list">
-        {productListData.map((product, index) => (
-          <div className="product-card" key={index}>
-          <img src={product.image} alt={product.name} />
-          <div className="product-details">
-            <p className="product-name">{product.name}</p>
-            <p className="product-price">£{product.price.toFixed(2)}</p>
-            <button className="add-to-basket" onClick={() => handleAddToBasket(product)}>Add to basket</button>
-          </div>
+    <>
+      <div className="product-list-container" style={{ height: containerHeight }}>
+        <div className="product-list">
+          {productListData.map((product, index) => (
+            <div className="product-card rounded-lg overflow-hidden shadow-lg mb-6" key={index}>
+              <img src={product.image} alt={product.name} className="w-full" />
+              <div className="p-4">
+                <p className="font-bold text-xl mb-2">{product.name}</p>
+                <p className="text-gray-700 text-base font-medium mb-4">£{product.price.toFixed(2)}</p>
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block w-full"
+                  onClick={() => handleAddToBasket(product)}
+                >
+                  Add to basket
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-        
-        ))}
       </div>
       <div className="basket-container">
         <h2>Basket:</h2>
@@ -72,12 +87,13 @@ function ProductList() {
                 <p>Total:</p>
                 <p>£{calculateTotal()}</p>
               </li>
-              <button>Checkout</button>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" style={{ marginTop: "1rem" }}>Checkout</button>
             </>
           )}
         </ul>
       </div>
-    </div>
+      <footer />
+    </>
   );
 }
 
