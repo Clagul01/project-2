@@ -1,0 +1,169 @@
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+  height: 80vh; 
+}
+
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 75%;
+  margin-right: 20%;
+}
+
+.product-card {
+  width: calc((100% / 3) - 100px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+
+}
+
+
+.product-details {
+  padding: 20px;
+  margin: 20px;
+
+}
+
+.product-details p {
+  margin: 0;
+}
+
+.product-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.basket {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+
+.basket h2 {
+  color: #F7B42C;
+  text-align: center;
+}
+
+.basket p {
+  text-align:left;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 25%;
+}
+
+.right-section h2 {
+  margin-bottom: 10px;
+}
+
+.right-section p {
+  margin: 0;
+}
+
+
+.basket-container {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 20%;
+  height: calc(100% - 200px); 
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+
+
+
+
+.basket-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #F7B42C;
+}
+
+.basket {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.basket li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+}
+
+.basket p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.basket p:nth-child(2) {
+  margin-left: auto;
+  font-weight: bold;
+  color: #F7B42C;
+}
+
+.basket button {
+  background-color: #F7B42C;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.basket button:hover {
+  background-color: #007bff;
+}
+
+.add-to-basket {
+  background-color: #F7B42C;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.add-to-basket:hover {
+  background-color: #007bff;
+}
+
