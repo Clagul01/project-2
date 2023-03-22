@@ -17,15 +17,14 @@ body {
 
 h1 {
   color: #F7B42C;
-  text-align: center;
-  font-size: 4rem; /* Updated for responsiveness */
+  text-align: left;
+  font-size: 100px;
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 3px 4px #3E2723;
-  margin-top: 5%; /* Updated for responsiveness */
-  margin-bottom: 5%; /* Updated for responsiveness */
-  margin-left: auto; /* Updated for responsiveness */
-  margin-right: auto; /* Updated for responsiveness */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 180px;
 
   animation: zoomInOut 2s ease-in-out;
 }
@@ -41,3 +40,4 @@ h1 {
     transform: scale(1);
   }
 }
+

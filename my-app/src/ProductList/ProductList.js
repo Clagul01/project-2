@@ -61,11 +61,11 @@ function ProductList() {
                 <p className="font-bold text-xl mb-2">{product.name}</p>
                 <p className="text-gray-700 text-base font-medium mb-4">£{product.price.toFixed(2)}</p>
                 <button
-                   className="add-to-basket-button block w-full"
-                 onClick={() => handleAddToBasket(product)}>
-                 Add to basket
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block w-full"
+                  onClick={() => handleAddToBasket(product)}
+                >
+                  Add to basket
                 </button>
-
               </div>
             </div>
           ))}
