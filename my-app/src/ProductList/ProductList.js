@@ -23,7 +23,7 @@ const productListData = [
   },
   {
     name: "cappucino",
-    price: 3.99,
+    price: 2.99,
     image: cappucinoImg
   },
 ];
