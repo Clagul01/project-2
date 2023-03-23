@@ -1,0 +1,43 @@
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margin and padding from every element */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  color: #F7B42C;
+  text-align: center;
+  font-size: 4rem; /* Updated for responsiveness */
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 3px 4px #3E2723;
+  margin-top: 5%; /* Updated for responsiveness */
+  margin-bottom: 5%; /* Updated for responsiveness */
+  margin-left: auto; /* Updated for responsiveness */
+  margin-right: auto; /* Updated for responsiveness */
+
+  animation: zoomInOut 2s ease-in-out;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
